@@ -1,4 +1,4 @@
-# [Pronta pra ser Cientista](https://sites.usp.br/prontacientista/), 4a. edição - 2024
+# [Pronta pra ser Cientista](https://www.instagram.com/prontapracientista/), 4a. edição - 2024
 
 ## Dia 4, Ciência de Dados, 25 de maio de 2024 
 

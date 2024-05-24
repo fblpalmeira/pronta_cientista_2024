@@ -81,7 +81,7 @@ library(readxl) # Abrir
 
 ``` 
 
-## Visualizar a [Planilha da Parcela 1](https://github.com/fblpalmeira/pronta_cientista/blob/main/data/planilha_de_campo_parcela_1_lado_esquerdo.jpeg)
+## Visualizar a [Planilha da Parcela 1](https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Planilha_View.jpeg)
 
 ``` r
 

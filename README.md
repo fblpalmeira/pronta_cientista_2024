@@ -26,17 +26,11 @@ A comunidade R é muito amigável e as pessoas que fazem parte desta comunidade 
 
 O objetivo desta aula prática é visualizar a riqueza e a abundância de espécies vegetais utilizando os dados coletados durante o nosso trabalho de campo na Floresta da USP em Ribeirão Preto, SP.
 
-Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de 30 x 30 metros no interior da Floresta, uma do lado esquerdo e a outra do lado direito, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 minutos em cada parcela.
+Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de 20 x 10 metros na borda da Floresta, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 minutos em cada parcela.
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/area_de_estudo_parcelas.png" align="center" width = "800px"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/mapa_floresta_pronta_2024.jpg" align="center" width = "800px"/>
 
-Figura 2.  Localização das parcelas amostradas na Floresta da USP em Ribeirão Preto.
-
-No laboratório, iremos simular os dados de amostragem de mais 10 parcelas, totalizando 12 parcelas, seis no interior e seis na borda, incluindo as parcelas que amostramos no campo. Os dados simulados serão utilizados para testar se existiu diferença significativa entre a riqueza e a abundância de indivíduos na borda e no interior da floresta.
-
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/area_de_estudo_parcelas_simuladas.png" align="center" width = "800px"/>
-
-Figura 3. Transecto realizado na Floresta e localização das parcelas amostradas (em amarelo) e simuladas (em branco).
+Figura 2.  Localização das áreas amostradas na Floresta da USP em Ribeirão Preto.
 
 -----
 
@@ -44,7 +38,7 @@ Figura 3. Transecto realizado na Floresta e localização das parcelas amostrada
 
 No link abaixo, está todo o material da aula incluindo o código dos exercícios, as planilhas .xlsx, os tutoriais em .pdf, etc.
 
-- [Material para download](https://github.com/fblpalmeira/pronta_cientista/tree/main/data)
+- [Material para download](https://github.com/fblpalmeira/pronta_cientista_2024/tree/main/docs)
 
 -----
 

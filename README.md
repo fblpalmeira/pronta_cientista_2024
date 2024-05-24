@@ -28,7 +28,7 @@ O objetivo desta aula prática é visualizar a riqueza e a abundância de espéc
 
 Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de 20 x 10 metros na borda da Floresta, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 minutos em cada parcela.
 
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/mapa_floresta_pronta_2024.jpg" align="center" width = "800px"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/mapa_floresta_pronta_2024.jpg">
 
 Figura 2.  Localização das áreas amostradas na Floresta da USP em Ribeirão Preto.
 

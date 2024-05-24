@@ -1,6 +1,6 @@
 # [Pronta pra ser Cientista](https://www.instagram.com/prontapracientista/), 4a. edição - 2024
 
-## Dia 4, Ciência de Dados, 25 de maio de 2024 
+## Dia 4, Analisando a Biodiveridade, 25 de maio de 2024 
 
 ### [Francesca B. L. Palmeira](https://fblpalmeira.github.io/), francesca@alumni.usp.br 
 
@@ -108,60 +108,6 @@ p1 # Vizualizar a planilha 1 parcialmente
 12    12 sp12    NA      Plântula                 4 Planta espada  Veget… Inte…    -21.2     -47.9 Parcel… O desenho…
 
 ``` 
-
-## Visualizar a [Planilha da Parcela 2](https://github.com/fblpalmeira/pronta_cientista/blob/main/data/planilha_de_campo_parcela_2_lado_direito.jpeg)
-
-``` r
-
-p2 <- read_excel("parcela2_lado_direito.xlsx", na = "-") # Ler a planilha da parcela 2
-p2 # Vizualizar a planilha 2 parcialmente
-
-# A tibble: 11 × 12
-      ID Especie Familia Classificacao N_individuos Caracteristica Estado     Local   Latitude
-   <dbl> <chr>   <chr>   <chr>                <dbl> <chr>          <chr>      <chr>      <dbl>
- 1     1 sp1     NA      Herbácea                 8 Folha          Vegetativo Interi…    -21.2
- 2     2 sp2     NA      Árvore                   1 Folha áspera   Vegetativo Interi…    -21.2
- 3     3 sp3     NA      Herbácea                 3 Folha          Vegetativo Interi…    -21.2
- 4     4 sp4     NA      Herbácea                 7 Folha          Flores     Interi…    -21.2
- 5     5 sp5     NA      Herbácea                 1 Folha          Vegetativo Interi…    -21.2
- 6     6 sp6     NA      Árvore                   1 Folha          Vegetativo Interi…    -21.2
- 7     7 sp7     NA      Árvore                   2 Folha longa    Vegetativo Interi…    -21.2
- 8     8 sp8     NA      Herbácea                12 Folha          Vegetativo Interi…    -21.2
- 9     9 sp9     NA      Herbácea                 2 Folha          Vegetativo Interi…    -21.2
-10    10 sp10    NA      Herbácea                 1 Folha          Vegetativo Interi…    -21.2
-11    11 sp11    NA      Herbácea                 1 Folha          Vegetativo Interi…    -21.2
-# ℹ 3 more variables: Longitude <dbl>, Parcela <chr>, Observacao <chr>
-
-``` 
-
-# Juntar as duas planilhas em um único objeto 
-
-A união das duas planilhas (p1 e p2) utilizando a função "rbind" resultará no objeto (y) a seguir:
-
-``` r
-
-# Juntar as duas planilhas (p1 e p2) em um único objeto (y) utilizando a função "rbind"
-y <- rbind (p1, p2)
-y # Vizualizar a planilha parcialmente
-
-# A tibble: 23 × 12
-      ID Especie Familia   Classifica…¹ N_ind…² Carac…³ Estado Local Latit…⁴ Longi…⁵ Parcela Obser…⁶
-   <dbl> <chr>   <chr>     <chr>          <dbl> <chr>   <chr>  <chr>   <dbl>   <dbl> <chr>   <chr>  
- 1     1 sp1     Piperacea Herbácea           8 Folha … Com f… Inte…   -21.2   -47.9 Parcel… O dese…
- 2     2 sp2     NA        Arvoreta           8 Folha … Veget… Inte…   -21.2   -47.9 Parcel… O dese…
- 3     3 sp3     NA        Árvore             4 Árvore… Veget… Inte…   -21.2   -47.9 Parcel… O dese…
- 4     4 sp4     NA        Árvore             2 Folha … Veget… Inte…   -21.2   -47.9 Parcel… O dese…
- 5     5 sp5     NA        Trepadeira         2 Folha … Veget… Inte…   -21.2   -47.9 Parcel… O dese…
- 6     6 sp6     NA        Herbácea           5 Sai do… Veget… Inte…   -21.2   -47.9 Parcel… O dese…
- 7     7 sp7     Croton    Árvore             5 Folha … Veget… Inte…   -21.2   -47.9 Parcel… O dese…
- 8     8 sp8     NA        Árvore             4 Folha … Veget… Inte…   -21.2   -47.9 Parcel… O dese…
- 9     9 sp9     NA        Herbácea          24 Folha … Veget… Inte…   -21.2   -47.9 Parcel… O dese…
-10    10 sp10    NA        Rastejante         1 Folha … Veget… Inte…   -21.2   -47.9 Parcel… O dese…
-# … with 13 more rows, and abbreviated variable names ¹​Classificacao, ²​N_individuos,
-#   ³​Caracteristica, ⁴​Latitude, ⁵​Longitude, ⁶​Observacao
-# ℹ Use `print(n = ...)` to see more rows
-
-```
 
 ## Vizualizando a planilha inteira
 

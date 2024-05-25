@@ -24,6 +24,14 @@ A seguir, precisaremos acessar os exercícios clicando em qualquer um dos links 
 
 -----
 
+## Código e Planilhas de dados
+
+No link abaixo, está todo o material da aula incluindo o código dos exercícios, as planilhas .xlsx, os tutoriais em .pdf, etc.
+
+- [Material para download](https://github.com/fblpalmeira/pronta_cientista_2024/tree/main/data)
+
+-----
+
 ## Prática 
 
 O objetivo desta aula prática é visualizar a riqueza e a abundância de espécies vegetais utilizando os dados coletados durante o nosso trabalho de campo na Floresta da USP em Ribeirão Preto, SP em 11/05/2024.

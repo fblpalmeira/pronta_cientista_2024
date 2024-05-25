@@ -28,7 +28,7 @@ A seguir, precisaremos acessar os exercícios clicando em qualquer um dos links 
 
 No link abaixo, está todo o material da aula incluindo o código dos exercícios, as planilhas .xlsx, os tutoriais em .pdf, etc.
 
-- [Material para download](https://github.com/fblpalmeira/pronta_cientista_2024/tree/main/data)
+- [Material para download](https://github.com/fblpalmeira/pronta_cientista_2024/tree/main/docs)
 
 -----
 

@@ -507,7 +507,7 @@ dev.off()
 
 ## Confira o material do ano passado
 
-[Pronta Cientista 2023, 4a. edição](https://github.com/fblpalmeira/pronta_cientista)
+- [Pronta Cientista 2023, 4a. edição](https://github.com/fblpalmeira/pronta_cientista)
 
 ## Bibliografia básica
 

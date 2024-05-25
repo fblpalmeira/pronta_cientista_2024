@@ -130,6 +130,7 @@ y <- y %>% rename(Especie = "Espécie",
 # indivíduos (N)
 y1 <- y %>% group_by(Especie) %>%
              summarize(N = sum(N))
+y1
 
 ``` 
 

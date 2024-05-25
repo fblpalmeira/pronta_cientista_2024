@@ -6,42 +6,6 @@
 
 -----
 
-## Motivação
-
-O avanço tecnológico dos últimos anos facilitou o nosso acesso a equipamentos modernos de campo e a ferramentas gratuitas para a análise de dados de biodiversidade. Aliado a este fato, existe uma quantidade enorme de dados biológicos disponíveis em diferentes repositórios públicos e base de dados online.
-
-O grande desafio para a pessoa aspirante a analista de dados da biodiversidade é conhecer a vastidão de opções de análises e modelos ecológicos disponíveis. Cada modelo tem as premissas que devem ser atendidas e um delineamento amostral específico de coleta de dados. Além dos conhecimentos teóricos de Biologia e Ecologia, o aspirante a analista de dados de biodiversidade precisa ter noções avançadas de Estatística e Programação (ex. R, Python, entre outras linguagens) (Figura 1). É importante destacar que o trabalho com análise e visualização de dados pode subsidiar o planejamento de ações de conservação baseadas em evidências. 
-
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1_Analise_Biodiversidade_%40fblpalmeira.png" align="center" width = "550px"/>
-
-Figura 1.  Áreas do conhecimento necessárias para analisar dados de biodiversidade.
-
-A [linguagem R](https://www.r-project.org/about.html) foi feita especificamente para oferecer um conjunto integrado de recursos para a manipulação de dados, análise estatística e visualização gráfica. Também possibilita a reprodutibilidade dos resultados garantindo a transparência das análises. Desta forma, o uso da linguagem R tem sido extremamente útil para analisar e visualizar toda essa quantidade de dados disponíveis, além de possibilitar uma maior transparência e reprodutibilidade no processo de análise. 
-
-A comunidade R é muito amigável e as pessoas que fazem parte desta comunidade costumam estar muito disponíveis para ajudar, tirar dúvidas, oferecer mentoria, entre outras colaborações. Existem várias comunidades, vale destacar as [RLadies Global](https://rladies.org/), uma organização sem fins lucrativos que atua em diversos países. No Brasil, temos vários capítulos das RLadies distribuídos por diferentes cidades. A nossa missão é promover o uso da linguagem R entre grupos subrepresentados para formarmos uma comunidade mais inclusiva e diversa. Oferecemos eventos gratuitos, presenciais e virtuais, para estudarmos a linguagem R, do nível básico ao avançado. Aqui em Ribeirão Preto, temos um [Capítulo](https://rladiesrp.github.io/) voltado para a área da biodiversidade e conservação. Confira os eventos que já realizamos lá na página do nosso [Meetup](https://www.meetup.com/rladies-ribeirao-preto). Os eventos também podem ser assistidos no nosso canal do [YouTube](https://www.youtube.com/channel/UCmxRvwPXXLdcv_lWkIqB1yA/about).
-
------
- 
-## Prática 
-
-O objetivo desta aula prática é visualizar a riqueza e a abundância de espécies vegetais utilizando os dados coletados durante o nosso trabalho de campo na Floresta da USP em Ribeirão Preto, SP em 11/05/2024.
-
-Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de aproximadamente 20 x 10 metros na borda da Floresta, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 a 40 minutos em cada parcela.
-
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/mapa_floresta_pronta_2024.jpg">
-
-Figura 2.  Localização das áreas amostradas na Floresta da USP em Ribeirão Preto.
-
------
-
-## Código e Planilhas de dados
-
-No link abaixo, está todo o material da aula incluindo o código dos exercícios, as planilhas .xlsx, os tutoriais em .pdf, etc.
-
-- [Material para download](https://github.com/fblpalmeira/pronta_cientista_2024/tree/main/docs)
-
------
-
 ## Links dos exercícios no Posit Cloud
 
 Vamos fazer os exercícios utilizando a [linguagem R](https://www.r-project.org/about.html) em uma versão do [RStudio](https://posit.co/download/rstudio-desktop/) que está disponível na nuvem, sem precisar instalar de nenhum programa ou software no computador. Primeiro, você deverá criar uma conta pessoal no [Posit Cloud](https://posit.cloud/). O site é seguro e não precisa pagar nada, pois vamos optar pelo plano gratuito. O tutorial abaixo tem o passo a passo para abrir a conta. 
@@ -57,6 +21,18 @@ A seguir, precisaremos acessar os exercícios clicando em qualquer um dos links 
 - [Link3 `.R`](https://posit.cloud/content/6029582)
 
 - [Link4 `.R`](https://posit.cloud/content/6029592)
+
+-----
+ 
+## Prática 
+
+O objetivo desta aula prática é visualizar a riqueza e a abundância de espécies vegetais utilizando os dados coletados durante o nosso trabalho de campo na Floresta da USP em Ribeirão Preto, SP em 11/05/2024.
+
+Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de aproximadamente 20 x 10 metros na borda da Floresta, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 a 40 minutos em cada parcela.
+
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/mapa_floresta_pronta_2024.jpg">
+
+Figura 2.  Localização das áreas amostradas na Floresta da USP em Ribeirão Preto.
 
 -----
 
@@ -190,8 +166,12 @@ Após contar o número de espécies por indivíduos, iremos visualizar esses dad
 
 ``` r
 
-# Construir um gráfico de barras para visualizar o número de indivíduos por espécie registrada
-ggplot(y1, aes(Especie, N_individuos))+ 
+# Abrir o pacote 'ggplot2' para construir o gráfico
+# Vamos construir um gráfico de barras para visualizar o número de indivíduos 
+# por espécie
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(y1, aes(Especie, N)) + 
   geom_col()
 
 ```
@@ -204,9 +184,8 @@ Finalmente, temos um gráfico! Agora vamos deixá-lo mais intuitivo e utilizar a
 
 ``` r
 
-# Ordenar o número de indivíduos por espécie em ordem crescente 
-# utilizando a função "reorder"  
-ggplot(y1, aes(reorder(Especie, N_individuos), N_individuos))+ 
+# Ordenar o número de indivíduos por espécie usando o comando 'reorder'  
+ggplot(y1, aes(reorder(Especie, N), N)) +
   geom_col()
   
 ```
@@ -217,12 +196,10 @@ ggplot(y1, aes(reorder(Especie, N_individuos), N_individuos))+
 
 ``` r
 
-# Ordenar o número de indivíduos por espécie em ordem decrescente para
-# visualizarmos a Distribuição de Abundância das Espécies (DAE), desta forma,
-# poderemos identificar facilmente quais são as espécies mais abundantes e quais são as mais raras
-# Para ordenar em ordem descrescente basca colocar um sinal de menos (-) na variável
-# "-N_individuos" depois da função "reorder"
-ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
+# Ordenar o número de indivíduos por espécie em ordem decrescente utilizando o 
+# sinal de menos na frente da varíavel N (-N), desta forma, poderemos identificar 
+# facilmente quais são as espécies mais abundantes e quais são as mais raras
+ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
   geom_col()
 
 ```
@@ -234,7 +211,7 @@ ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
 ``` r
 
 # Colorir as barras do gráfico editando o argumento "fill" dentro da função "geom_col" 
-ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
+ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
   geom_col(fill = "darkgreen") # Editar a cor do gráfico
 
 ```
@@ -247,9 +224,9 @@ ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
 
 # Renomear as etiquetas dos eixos (x, y) do gráfico utilizando a função "labs"
 # Colocar acentos e descrever sucintamente para que o leitor possa saber o que significa cada eixo
-ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
+ggplot(y1, aes(reorder(Especie, -N, sum), N))+
   geom_col(fill = "darkgreen")+
-  labs(x = "Nome das espécies", y = "Número de indivíduos (n)") # Editar a etiqueta
+  labs(x = "Nome das espécies", y = "Número de indivíduos (n)") # Editar as etiquetas
 
 ```
 
@@ -259,102 +236,42 @@ ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
 
 ``` r
 
-# Limpar o fundo do gráfico utilizando a função 'theme_bw'
-ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
+# Limpar o fundo do gráfico e a grade de linhas (x, y) dos painéis 
+# utilizando a função 'theme'
+ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
   geom_col(fill = "darkgreen") +
   labs(x = "Nome das espécies", y = "Número de indivíduos (n)")+
-  theme_bw() # Limpar o fundo do gráfico
+  theme_bw() + # Limpar painel
+  theme (panel.grid.major.y = element_blank(), # Limpar grades de linhas
+         panel.grid.minor.y = element_blank())+ 
+  theme (panel.grid.major.x = element_blank(), 
+         panel.grid.minor.x = element_blank())
          
 ```
 
 <img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1f_DAE.png"/>
-
-## Limpando a grade de linhas
-
-``` r
-
-# Limpar a grade do gráfico utilizando o "element_blank()" dentro da função 'theme'
-ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
-  geom_col(fill = "darkgreen") +
-  labs(x = "Nome das espécies", y = "Número de indivíduos (n)")+
-  theme_bw()+
-  theme (panel.grid.major.x = element_blank(), # Limpar linhas do eixo x
-         panel.grid.minor.x = element_blank())+
-  theme (panel.grid.major.y = element_blank(), # Limpar linhas do eixo y
-         panel.grid.minor.y = element_blank())
-
-``` 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1g_DAE.png"/>
 
 ## Aumentando o tamanho das letras 
 
 ``` r
 
 # Aumentar o tamanho da letra da etiqueta em cada eixo (x e y) editando os 
-# argumentos (axis.title.x=element_text(size=20) e (axis.title.y=element_text(size=20)) 
-# da função 'theme'. Caso necessário utilize uma letra maior ou menor que 20
-ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
-  geom_col(fill = "darkgreen")+
+# argumentos (axis.title.x=element_text(size=12) e (axis.title.y=element_text(size=12)) 
+# Caso necessário utilize uma letra maior ou menor que 12
+ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
+  geom_col(fill = "darkgreen") +
   labs(x = "Nome das espécies", y = "Número de indivíduos (n)")+
-  theme_bw()+
-  theme (panel.grid.major.x = element_blank(), 
-         panel.grid.minor.x = element_blank())+
+  theme_bw() +
   theme (panel.grid.major.y = element_blank(), 
-         panel.grid.minor.y = element_blank())+
-  theme (axis.title.x = element_text(size=20))+ # Aumentar as letras no eixo x
-  theme (axis.title.y = element_text(size=20)) # Aumentar as letras no eixo y
+         panel.grid.minor.y = element_blank()) + 
+  theme (panel.grid.major.x = element_blank(), 
+         panel.grid.minor.x = element_blank()) +
+  theme (axis.text.x=element_text(size=12)) + # Aumentar a letra do eixo x
+  theme (axis.text.y=element_text(size=12)) # Aumentar a letra do eixo y
 
 ```
 
 <img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1h_DAE.png"/>
-
-## Aumentando o tamanho dos números 
-
-``` r
-
-# Aumentar o tamanho dos números nos eixos x e y editando os 
-# argumentos (axis.text.x=element_text(size=16) e (axis.text.y=element_text(size=16) da função 'theme' 
-# Caso necessário utilize um tamanho maior ou menor que 16
-ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
-  geom_col(fill = "darkgreen")+
-  labs(x = "Nome das espécies", y = "Número de indivíduos (n)")+
-  theme_bw()+
-  theme (panel.grid.major.x = element_blank(),
-         panel.grid.minor.x = element_blank())+
-  theme (panel.grid.major.y = element_blank(), 
-         panel.grid.minor.y = element_blank())+
-  theme (axis.title.x = element_text(size=20))+ 
-  theme (axis.title.y = element_text(size=20))+
-  theme (axis.text.x = element_text(size=16))+ # Aumentar o tamanho dos números no eixo x
-  theme (axis.text.y = element_text(size=16)) # Aumentar o tamanho dos números no eixo y
-
-```
-
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1i_DAE.png"/>
-
-## Salvando a figura final em um arquivo .png
-
-```
-
-# Salvar a figura final em formato .png
-# Para salvar o gráfico é necessário utilizar a função 'png' antes da função 'ggplot' 
-# e a dev.off() na última linha
-png(file="Figura1i_DAE.png", width = 1000, height = 600) # Salvar a figura
-ggplot(y1, aes(reorder(Especie, -N_individuos, sum), N_individuos))+
-  geom_col(fill = "darkgreen")+
-  labs(x = "Nome das espécies", y = "Número de indivíduos (n)")+
- theme_bw()+
-  theme (panel.grid.major.x = element_blank(), 
-         panel.grid.minor.x = element_blank())+
-  theme (panel.grid.major.y = element_blank(), 
-         panel.grid.minor.y = element_blank())+
-  theme (axis.title.x = element_text(size=20))+ 
-  theme (axis.title.y = element_text(size=20))+
-  theme (axis.text.x = element_text(size=16))+ 
-  theme (axis.text.y = element_text(size=16))
-dev.off() # Salvar a figura
-
-``` 
 
 -----
 
@@ -369,27 +286,30 @@ dev.off() # Salvar a figura
 # Fazer uma curva de rarefação utilizando a riqueza de espécies 
 # e o número de indivíduos contados
 
-# Abrir pacote para remodelar a tabela de dados
-install.packages("reshape2") # Instalar o pacote
+# Instalar e abrir o pacote 'reshape2' para transpor a tabela de dados (y)
+install.packages("reshape2")
 library(reshape2)
-
-# Transpor a posição da colunas Especies e Parcelas e contar o N_individuos
-y2 <- dcast(y, Especie ~ Parcela, value.var = "N_individuos")
+y2 <- dcast(y, Especie ~ Grupo, value.var="N")
 y2
 
-   Especie Parcela_1 Parcela_2
-1      sp1         8         8
-2     sp10         1         1
-3     sp11         5         1
-4     sp12         4        NA
-5      sp2         8         1
-6      sp3         4         3
-7      sp4         2         7
-8      sp5         2         1
-9      sp6         5         1
-10     sp7         5         2
-11     sp8         4        12
-12     sp9        24         2
+            Especie 6 Personalidades Borboleta Chico Dollares Flor USP Raposa
+1               1R               NA        NA             NA       NA      4
+2               2B               NA        NA             NA        4     NA
+3               2R               NA        NA             NA       NA     10
+4               4B               NA        NA             NA       10     NA
+5               5B               NA        NA             NA        3     NA
+6               6B               NA        NA             NA        6     NA
+7               8B               NA        NA             NA        1     NA
+8           Angico               NA         4              6        4     NA
+9      Asa de Fada                1        NA             NA       NA     NA
+10 Cogumelo branco                1        NA             NA       NA     NA
+11         Embaúba                1        NA             NA        1      2
+12       Espécie 3               NA        30             NA       NA     NA
+13       Guapuruvu               NA         9              5        7      8
+14       Guaricica                1        NA             NA       NA     NA
+15         Manguba               NA        NA              1       NA     NA
+16        Palmeira               NA         1             NA       NA     NA
+17         Pitanga               NA         1             NA       NA     NA
 
 ```
 
@@ -398,35 +318,29 @@ y2
 ``` r
 
 # Substituir os NA's por zeros
+# NA´s (Not Applicable) são as células vazias que não contém nenhuma informação,
+# geralmente são informações que foram perdidas ou não puderam ser coletadas
 y2 <- y2 %>% replace(is.na(.), 0) 
 y2
 
-   Especie Parcela_1 Parcela_2
-1      sp1         8         8
-2     sp10         1         1
-3     sp11         5         1
-4     sp12         4         0
-5      sp2         8         1
-6      sp3         4         3
-7      sp4         2         7
-8      sp5         2         1
-9      sp6         5         1
-10     sp7         5         2
-11     sp8         4        12
-12     sp9        24         2
-
-``` 
-
-## Verificando a estrutura interna de cada variável 
-
-``` r
-
-str(y2)
-
-'data.frame':	12 obs. of  3 variables:
- $ Especie  : chr  "sp1" "sp10" "sp11" "sp12" ...
- $ Parcela_1: num  8 1 5 4 8 4 2 2 5 5 ...
- $ Parcela_2: num  8 1 1 0 1 3 7 1 1 2 ...
+           Especie 6 Personalidades Borboleta Chico Dollares Flor USP Raposa
+1               1R                0         0              0        0      4
+2               2B                0         0              0        4      0
+3               2R                0         0              0        0     10
+4               4B                0         0              0       10      0
+5               5B                0         0              0        3      0
+6               6B                0         0              0        6      0
+7               8B                0         0              0        1      0
+8           Angico                0         4              6        4      0
+9      Asa de Fada                1         0              0        0      0
+10 Cogumelo branco                1         0              0        0      0
+11         Embaúba                1         0              0        1      2
+12       Espécie 3                0        30              0        0      0
+13       Guapuruvu                0         9              5        7      8
+14       Guaricica                1         0              0        0      0
+15         Manguba                0         0              1        0      0
+16        Palmeira                0         1              0        0      0
+17         Pitanga                0         1              0        0      0
 
 ``` 
 
@@ -434,36 +348,27 @@ str(y2)
 
 ``` r
 
-# Transformar o data.frame y2 em "integer"
+# Transformar o data.frame (y2) em uma matriz (y3)
 y3 <- as.matrix(apply(y2[,-1],2,as.integer))
-str(y3)
 
- int [1:12, 1:2] 8 1 5 4 8 4 2 2 5 5 ...
- - attr(*, "dimnames")=List of 2
-  ..$ : NULL
-  ..$ : chr [1:2] "Parcela_1" "Parcela_2"
-
-``` 
-
-# Visualizar a planilha
-
-``` r
-
-y3
-
-  Parcela_1 Parcela_2
- [1,]         8         8
- [2,]         1         1
- [3,]         5         1
- [4,]         4         0
- [5,]         8         1
- [6,]         4         3
- [7,]         2         7
- [8,]         2         1
- [9,]         5         1
-[10,]         5         2
-[11,]         4        12
-[12,]        24         2
+      6 Personalidades Borboleta Chico Dollares Flor USP Raposa
+ [1,]                0         0              0        0      4
+ [2,]                0         0              0        4      0
+ [3,]                0         0              0        0     10
+ [4,]                0         0              0       10      0
+ [5,]                0         0              0        3      0
+ [6,]                0         0              0        6      0
+ [7,]                0         0              0        1      0
+ [8,]                0         4              6        4      0
+ [9,]                1         0              0        0      0
+[10,]                1         0              0        0      0
+[11,]                1         0              0        1      2
+[12,]                0        30              0        0      0
+[13,]                0         9              5        7      8
+[14,]                1         0              0        0      0
+[15,]                0         0              1        0      0
+[16,]                0         1              0        0      0
+[17,]                0         1              0        0      0
 
 ``` 
 
@@ -471,23 +376,29 @@ y3
 
 ``` r
 
-# Informar os nomes das espécies 
+# Ao transformar o data frame em matriz, ele suprime o nome das espécies na primeira
+# coluna. Então, precisamos retornar os nomes das espécies na primeira coluna
 row.names(y3) <- y2[,1]
 y3
 
-  Parcela_1 Parcela_2
-sp1          8         8
-sp10         1         1
-sp11         5         1
-sp12         4         0
-sp2          8         1
-sp3          4         3
-sp4          2         7
-sp5          2         1
-sp6          5         1
-sp7          5         2
-sp8          4        12
-sp9         24         2
+                6 Personalidades Borboleta Chico Dollares Flor USP Raposa
+1R                             0         0              0        0      4
+2B                             0         0              0        4      0
+2R                             0         0              0        0     10
+4B                             0         0              0       10      0
+5B                             0         0              0        3      0
+6B                             0         0              0        6      0
+8B                             0         0              0        1      0
+Angico                         0         4              6        4      0
+Asa de Fada                    1         0              0        0      0
+Cogumelo branco                1         0              0        0      0
+Embaúba                        1         0              0        1      2
+Espécie 3                      0        30              0        0      0
+Guapuruvu                      0         9              5        7      8
+Guaricica                      1         0              0        0      0
+Manguba                        0         0              1        0      0
+Palmeira                       0         1              0        0      0
+Pitanga                        0         1              0        0      0
 
 ``` 
 
@@ -498,128 +409,37 @@ sp9         24         2
 # Contar o número de indivíduos por parcela
 colSums(y3)
 
-Parcela_1 Parcela_2 
-       72        39 
+6 Personalidades        Borboleta   Chico Dollares         Flor USP           Raposa 
+               4               45               12               36               24 
 
 ``` 
 
-## Comparando as duas parcelas amostradas
-
-``` r
-
-#Abrir pacote para fazer a interpolação e extrapolação dos dados
-install.packages("iNEXT") # Instalar o pacote
-library(iNEXT)
-
-# Comparar as duas parcelas de amostragem (Parcela_1 e Parcela_2)
-estimates <- iNEXT(y3, datatype = "abundance", endpoint = 100)
-estimates
-
-Compare 2 assemblages with Hill number order q = 0.
-$class: iNEXT
-
-$DataInfo: basic data information
-  Assemblage  n S.obs     SC f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
-1  Parcela_1 72    12 0.9869  1  2  0  3  3  0  0  2  0   0
-2  Parcela_2 39    11 0.8744  5  2  1  0  0  0  1  1  0   0
-
-$iNextEst: diversity estimates with rarefied and extrapolated samples.
-$size_based (LCL and UCL are obtained for fixed size.)
-
-   Assemblage   m        Method Order.q        qD    qD.LCL    qD.UCL        SC     SC.LCL    SC.UCL
-1   Parcela_1   1   Rarefaction       0  1.000000  1.000000  1.000000 0.1494523 0.10558753 0.1933170
-10  Parcela_1  36   Rarefaction       0 10.749383  9.601695 11.897071 0.9272886 0.89465989 0.9599173
-20  Parcela_1  72      Observed       0 12.000000 10.284932 13.715068 0.9868519 0.95694718 1.0000000
-30  Parcela_1  85 Extrapolation       0 12.125627 10.226138 14.025116 0.9935520 0.96753382 1.0000000
-40  Parcela_1 100 Extrapolation       0 12.193392 10.076838 14.309946 0.9971661 0.97498476 1.0000000
-41  Parcela_2   1   Rarefaction       0  1.000000  1.000000  1.000000 0.1619433 0.07859917 0.2452875
-50  Parcela_2  19   Rarefaction       0  7.791217  5.768308  9.814126 0.7991995 0.71133271 0.8870662
-60  Parcela_2  39      Observed       0 11.000000  7.673831 14.326169 0.8744383 0.78834040 0.9605362
-70  Parcela_2  68 Extrapolation       0 13.761591  8.615921 18.907261 0.9313783 0.84487026 1.0000000
-80  Parcela_2 100 Extrapolation       0 15.381054  8.149982 22.612126 0.9647693 0.89236559 1.0000000
-
-NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$size_based to view complete output.
-
-$coverage_based (LCL and UCL are obtained for fixed coverage; interval length is wider due to varying size in bootstraps.)
-
-   Assemblage        SC   m        Method Order.q       qD    qD.LCL    qD.UCL
-1   Parcela_1 0.1494523   1   Rarefaction       0  1.00000 0.8417931  1.158207
-10  Parcela_1 0.9272886  36   Rarefaction       0 10.74938 9.0470248 12.451741
-20  Parcela_1 0.9868519  72      Observed       0 12.00000 8.6935173 15.306483
-30  Parcela_1 0.9935520  85 Extrapolation       0 12.12563 8.4698923 15.781362
-40  Parcela_1 0.9971661 100 Extrapolation       0 12.19339 8.3384048 16.048380
-41  Parcela_2 0.1619433   1   Rarefaction       0  1.00000 0.8341096  1.165890
-50  Parcela_2 0.7991996  19   Rarefaction       0  7.79122 2.9802910 12.602149
-60  Parcela_2 0.8744383  39      Observed       0 11.00000 1.9971339 20.002866
-70  Parcela_2 0.9313783  68 Extrapolation       0 13.76159 1.5440781 25.979103
-80  Parcela_2 0.9647693 100 Extrapolation       0 15.38105 1.1373726 29.624736
-
-NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$coverage_based to view complete output.
-
-$AsyEst: asymptotic diversity estimates along with related statistics.
-  Assemblage         Diversity  Observed Estimator     s.e.       LCL       UCL
-1  Parcela_1  Species richness 12.000000 12.246528 2.669462 12.000000 17.478578
-2  Parcela_1 Shannon diversity  8.587949  9.334010 1.014292  7.346035 11.321985
-3  Parcela_1 Simpson diversity  6.200957  6.691099 1.149521  4.438080  8.944119
-4  Parcela_2  Species richness 11.000000 17.089744 7.581706 11.000000 31.949615
-5  Parcela_2 Shannon diversity  7.153175  8.995239 1.883865  5.302931 12.687548
-6  Parcela_2 Simpson diversity  5.451613  6.175000 1.407739  3.415882  8.934118
-
-```
-
-## Curva de rarefação de espécies 
+## Comparando as parcelas amostradas: Curva de rarefação de espécies 
 
 A comparação da riqueza de espécies entre as comunidades deve ser feita com base na riqueza de espécies rarefeita, que é calculada com base no número de indivíduos da parcela de amostragem com menor abundância [(Da Silva et al. 2022 - Análises ecológicas no R)](https://analises-ecologicas.netlify.app/cap10.html).
 
 ``` r
 
-# A comparação da riqueza de espécies entre as comunidades deve ser feita com base na riqueza 
-# de espécies rarefeita, que é calculada com base no número de indivíduos da parcela 
-# de amostragem com menor abundância (Da Silva et al. 2022 - Análises ecológicas no R)
+# Instalar e abrir o pacote 'iNEXT' para fazer a interpolação e extrapolação dos dados
+# Comparar a amostragem entre os grupos 
+install.packages("iNEXT")
+library(iNEXT)
+estimates <- iNEXT(y3, datatype="abundance", endpoint=100)
 ggiNEXT(estimates) +
   scale_linetype_discrete(labels = c("Interpolado", "Extrapolado")) +  
-  scale_colour_manual(values = c("orange", "cyan")) +
+  scale_colour_manual(values = c("orange", "cyan","red", "blue","green")) +
   labs(x = "Número de indivíduos", y = " Riqueza de espécies")+
-  theme_bw()+
-  theme (panel.grid.major.x = element_blank(),
-         panel.grid.minor.x = element_blank())+
+  theme_bw() +
   theme (panel.grid.major.y = element_blank(), 
-         panel.grid.minor.y = element_blank())+
-  theme (axis.title.x = element_text(size=20))+ 
-  theme (axis.title.y = element_text(size=20))+
-  theme (axis.text.x = element_text(size=16))+ 
-  theme (axis.text.y = element_text(size=16))
+         panel.grid.minor.y = element_blank()) + 
+  theme (panel.grid.major.x = element_blank(), 
+         panel.grid.minor.x = element_blank()) +
+  theme (axis.text.x=element_text(size=12)) +
+  theme (axis.text.y=element_text(size=12))
   
 ```   
 
 <img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura2_Rarefacao_Parcelas_1_e_2_a.png" align="center" width = "800px"/>
-
-# Aumentar o tamanho da legenda
-
-``` r
-
-# Aumentar tamanho da legenda
-ggiNEXT(estimates) +
-  scale_linetype_discrete(labels = c("Interpolado", "Extrapolado")) +  
-  scale_colour_manual(values = c("orange", "cyan")) +
-  labs(x = "Número de indivíduos", y = " Riqueza de espécies")+
-  theme_bw()+
-  theme (panel.grid.major.x = element_blank(),
-         panel.grid.minor.x = element_blank())+
-  theme (panel.grid.major.y = element_blank(), 
-         panel.grid.minor.y = element_blank())+
-  theme (axis.title.x = element_text(size=20))+ 
-  theme (axis.title.y = element_text(size=20))+
-  theme (axis.text.x = element_text(size=16))+ 
-  theme (axis.text.y = element_text(size=16))+
-  theme (legend.key.size = unit(1, 'cm'), # Altera o tamanho da chave da legenda
-         legend.key.height = unit(1, 'cm'), # Altera a altura da chave da legenda
-         legend.key.width = unit(1, 'cm'), # Altera a largura da chave da legenda
-         legend.text = element_text(size=16))+ # Altera o tamanho da fonte do texto da legenda
-dev.off()
-
-``` 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura2_Rarefacao_Parcelas_1_e_2_b.png" align="center" width = "800px"/>
 
 # Inserir uma linha vertical tracejada e salvar a figura 
 
@@ -627,25 +447,23 @@ A comparação da riqueza de espécies entre as comunidades deve ser feita com b
 
 ``` r
 
-# Inserir uma linha vertical tracejada na Parcela_2 e salvar a figura final  
-ggiNEXT(estimates) + 
-  geom_vline(xintercept = 39, lty = 2) + # Insere a linha vertical
+# Inserir uma linha vertical (linha preta tracejada) para indicar a menor abundância
+# A comparação da riqueza de espécies entre as comunidades deve ser feita com base 
+# na riqueza de espécies rarefeita, que é calculada com base no número de indivíduos 
+# da comunidade com menor abundância (4 indivíduos registrado pelo Grupo 6 Personalidades). 
+# Fonte: Da Silva et al. 2022 - Análises ecológicas no R
+ggiNEXT(estimates) +
+  geom_vline(xintercept = 4, lty = 2) +
   scale_linetype_discrete(labels = c("Interpolado", "Extrapolado")) +  
-  scale_colour_manual(values = c("orange", "cyan")) +
+  scale_colour_manual(values = c("orange", "cyan","red", "blue","green")) +
   labs(x = "Número de indivíduos", y = " Riqueza de espécies")+
-  theme_bw()+
-  theme (panel.grid.major.x = element_blank(),
-         panel.grid.minor.x = element_blank())+
+  theme_bw() +
   theme (panel.grid.major.y = element_blank(), 
-         panel.grid.minor.y = element_blank())+
-  theme (axis.title.x = element_text(size=20))+ 
-  theme (axis.title.y = element_text(size=20))+
-  theme (axis.text.x = element_text(size=16))+ 
-  theme (axis.text.y = element_text(size=16))+
-  theme (legend.key.size = unit(1, 'cm'), 
-        legend.key.height = unit(1, 'cm'), 
-        legend.key.width = unit(1, 'cm'), 
-        legend.text = element_text(size=14))
+         panel.grid.minor.y = element_blank()) + 
+  theme (panel.grid.major.x = element_blank(), 
+         panel.grid.minor.x = element_blank()) +
+  theme (axis.text.x=element_text(size=12)) +
+  theme (axis.text.y=element_text(size=12))
 
 ``` 
 
@@ -655,7 +473,7 @@ ggiNEXT(estimates) +
 
 ## Interpretação dos resultados
 
-Existiu diferença estatística entre a riqueza e o número de espécies nas parcelas amostradas?
+Existiu diferença estatística entre a riqueza e o número de espécies nas parcelas amostradas pelo grupos?
 
 -----
 

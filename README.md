@@ -197,7 +197,7 @@ ggplot(y1, aes(reorder(Especie, N), N)) +
   
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot2.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot2b.png"/>
 
 ## Organizando o gráfico em ordem decrescente
 
@@ -211,7 +211,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
 
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot3.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot3b.png"/>
 
 ## Colorindo o gráfico
 
@@ -237,7 +237,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N))+
 
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot5.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot5b.png"/>
 
 ## Limpando o plano de fundo
 
@@ -256,7 +256,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
          
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot6.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot6b.png"/>
 
 ## Aumentando o tamanho das letras 
 
@@ -278,7 +278,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
 
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot7.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot7b.png"/>
 
 -----
 
@@ -474,7 +474,7 @@ ggiNEXT(estimates) +
 
 ``` 
 
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot9.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot9b.png"/>
 
 ----
 

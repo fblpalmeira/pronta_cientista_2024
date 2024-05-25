@@ -490,7 +490,7 @@ O gráfico de waffle é utilizado para representar proporções. Neste exercíci
 
 O código do exercício está dentro dos [links](https://github.com/fblpalmeira/pronta_cientista/blob/main/README.md#links-dos-exerc%C3%ADcios-no-posit-cloud) disponibilizados no início desta página. Caso tenha alguma dúvida sobre o exercício é só seguir o tutorial abaixo. No tutorial, tem todo o passo a passo de como construir o gráfico da sua biografia e, ao final, exportá-lo para o computador.
 
-- [Tutorial para fazer um gráfico de waffle `.pdf`](https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Tutotial_RStudio_Cloud_Waffle_Pronta_Cientista_2023_05_27.pdf)
+- [Tutorial para fazer um gráfico de waffle `.pdf`](https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Tutotial_RStudio_Cloud_Waffle_Pronta_Cientista_2024_05_25.pdf)
 
 ## A vida da cientista em um gráfico de waffle
 

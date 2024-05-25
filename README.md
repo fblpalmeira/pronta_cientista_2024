@@ -24,9 +24,9 @@ A comunidade R é muito amigável e as pessoas que fazem parte desta comunidade 
  
 ## Prática 
 
-O objetivo desta aula prática é visualizar a riqueza e a abundância de espécies vegetais utilizando os dados coletados durante o nosso trabalho de campo na Floresta da USP em Ribeirão Preto, SP.
+O objetivo desta aula prática é visualizar a riqueza e a abundância de espécies vegetais utilizando os dados coletados durante o nosso trabalho de campo na Floresta da USP em Ribeirão Preto, SP em 11/05/2024.
 
-Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de 20 x 10 metros na borda da Floresta, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 minutos em cada parcela.
+Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de aproximadamente 20 x 10 metros na borda da Floresta, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 a 40 minutos em cada parcela.
 
 <img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/mapa_floresta_pronta_2024.jpg">
 
@@ -71,25 +71,23 @@ Carregar e manipular os dados no `R`:
 ###############
 
 # Construir um gráfico de Distribuição de Abundância de Espécies 
-# das parcelas amostradas em campo (Parcela_1 e Parcela_2) 
+# das parcelas amostradas em campo
 
 # Instalar e abrir o pacote "readxl" que lê arquivos do Excel (extensões .xls ou .xlsx)
-# Para ler outras extensões de arquivos (ex.: .txt, .csv, .pdf, .html) utilizamos 
-# outros pacotes
 install.packages("readxl") # Instalar 
 library(readxl) # Abrir 
 
 ``` 
 
-## Visualizar a [Planilha da Parcela 1](https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Planilha_View.jpeg)
+## Ler e visualizar a [Planilha](https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Planilha_View.jpeg)
 
 ``` r
 
-# Criar um objeto para ler as planilhas de campo utilizando a função "read_excel"
-# O nome do objeto (ex.: p1, p2, y) é editável e você pode mudar se necessário
+# Criar um objeto (ex.: y) para armazenar a planilha do Excel
+# O nome do objeto é editável e você pode mudar se necessário
 # É importante que o nome do objeto seja curto e não tenha acento
-p1 <- read_excel("parcela1_lado_esquerdo.xlsx", na = "-") # Ler a planilha da parcela 1
-p1 # Vizualizar a planilha 1 parcialmente
+y <- read_excel("planilha_pronta_2024.xlsx", na = " ")
+y # Vizualizar a planilha parcialmente
 
 # A tibble: 6 × 8
   Grupo            Espécie         Família    Porte  Estado Local       N Características
@@ -115,91 +113,47 @@ View(y) # Vizualizar a planilha inteira
 
 <img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Planilha_View.jpeg"/>
 
-Agora que já temos uma única planilha com os dados coletados, iremos salvá-la em um arquivo que, posteriormente, poderá ser lido no Excel.
-É importante salvar todas as planilhas de entrada de dados e todas as figuras geradas durante as análises. 
-
-``` r
-
-# Abrir o pacote "openxlsx" que salva arquivos na extensão do Excel (extensões .xls ou .xlsx)
-install.packages("openxlsx") # Instalar o pacote
-library(openxlsx) # Abrir o pacote
-
-# Salvar um arquivo com as duas planilhas unidas
-# Entre "aspas" está o nome do arquivo que será salvo, você pode editar se precisar
-# Lembrando que o nome do arquivo não pode ter vírgula e deve ser curto 
-write.xlsx(y, "parcelas_1_e_2_juntas.xlsx") # Salvar o arquivo utilizando a função "write.xlsx" 
-
-```
-
 ## Vamos começar a explorar os dados coletados? 
 
-Utilizando as funções abaixo poderemos visualizar a estrutura interna dos dados (variável numérica, categórica, etc.), ver as médias e medianas de cada variável, os valores máximo e mínimo, entre outras informações.
-
-----
-
-# Verificando a estrutura interna de cada variável 
+Utilizando a função 'str' poderemos visualizar a estrutura interna dos dados (variável numérica, categórica, etc.), entre outras informações. 
 
 ``` r
 
-# Explorando os dados 
-# Os comandos a seguir servem para conhecermos a estrutura dos dados e verificar 
-# quais deles são numéricos, quais são categóricos e os valores mínimo e máximo de
-# cada variável
-str(y)     # Exibe a estrutura interna de cada variável dentro do objeto 
+str(y) # Verificar a estrutura interna de um objeto
 
-tibble [23 × 12] (S3: tbl_df/tbl/data.frame)
- $ ID            : num [1:23] 1 2 3 4 5 6 7 8 9 10 ...
- $ Especie       : chr [1:23] "sp1" "sp2" "sp3" "sp4" ...
- $ Familia       : chr [1:23] "Piperacea" "NA" "NA" "NA" ...
- $ Classificacao : chr [1:23] "Herbácea" "Arvoreta" "Árvore" "Árvore" ...
- $ N_individuos  : num [1:23] 8 8 4 2 2 5 5 4 24 1 ...
- $ Caracteristica: chr [1:23] "Folha oval com bico" "Folha longa e áspera" "Árvore cumprida" "Folha pequena" ...
- $ Estado        : chr [1:23] "Com frutos" "Vegetativo" "Vegetativo" "Vegetativo" ...
- $ Local         : chr [1:23] "Interior" "Interior" "Interior" "Interior" ...
- $ Latitude      : num [1:23] -21.2 -21.2 -21.2 -21.2 -21.2 ...
- $ Longitude     : num [1:23] -47.9 -47.9 -47.9 -47.9 -47.9 ...
- $ Parcela       : chr [1:23] "Parcela_1" "Parcela_1" "Parcela_1" "Parcela_1" ...
- $ Observacao    : chr [1:23] "O desenho da folha consta na planilha original" "O desenho da folha consta na planilha original" "O desenho da folha consta na planilha original" "O desenho da folha consta na planilha original" ...
-
-``` 
-
-# Ver as amplitudes mínima e máxima, a média e a mediana de cada variável
-
-``` r
-
-summary(y) # Exibe o resumo de cada variável mostrando as amplitudes mínima e máxima, a média e a mediana
-
-       ID           Especie            Familia          Classificacao       N_individuos    Caracteristica        Estado             Local          
- Min.   : 1.000   Length:23          Length:23          Length:23          Min.   : 1.000   Length:23          Length:23          Length:23         
- 1st Qu.: 3.500   Class :character   Class :character   Class :character   1st Qu.: 1.500   Class :character   Class :character   Class :character  
- Median : 6.000   Mode  :character   Mode  :character   Mode  :character   Median : 4.000   Mode  :character   Mode  :character   Mode  :character  
- Mean   : 6.261                                                            Mean   : 4.826                                                           
- 3rd Qu.: 9.000                                                            3rd Qu.: 6.000                                                           
- Max.   :12.000                                                            Max.   :24.000                                                           
-    Latitude        Longitude        Parcela           Observacao       
- Min.   :-21.16   Min.   :-47.86   Length:23          Length:23         
- 1st Qu.:-21.16   1st Qu.:-47.86   Class :character   Class :character  
- Median :-21.16   Median :-47.86   Mode  :character   Mode  :character  
- Mean   :-21.16   Mean   :-47.86                                        
- 3rd Qu.:-21.16   3rd Qu.:-47.86                                        
- Max.   :-21.16   Max.   :-47.86                                        
+tibble [24 × 8] (S3: tbl_df/tbl/data.frame)
+ $ Grupo          : chr [1:24] "6 Personalidades" "6 Personalidades" "6 Personalidades" "6 Personalidades" ...
+ $ Espécie        : chr [1:24] "Guaricica" "Embaúba" "Asa de Fada" "Cogumelo branco" ...
+ $ Família        : chr [1:24] NA NA NA NA ...
+ $ Porte          : chr [1:24] "Árvore" "Árvore" "Árvore" "Fungo" ...
+ $ Estado         : chr [1:24] "Fruto" NA "Fruto" NA ...
+ $ Local          : chr [1:24] "Direita" "Direita" "Direita" "Direita" ...
+ $ N              : num [1:24] 1 1 1 1 4 8 2 10 7 4 ...
+ $ Características: chr [1:24] "Parece uma noz" "Parece um plátano" "Parece uma asa de fada" "Pequeno e branco" ...
 
 ```
 
-Agora, vamos precisar manipular alguns dados da planilha para fazer o gráfico. Primeiro, iremos filtrar a coluna "Especies" e "N_individuos" e depois iremos contar quantos indivíduos por espécie registramos nas duas parcelas amostradas.
+Agora, vamos precisar manipular alguns dados da planilha para fazer o gráfico. Primeiro, iremos filtrar a coluna "Especies" e "N" (Número de indivíduos) e depois iremos contar quantos indivíduos por espécie registramos nas parcelas amostradas.
 
 ``` r
 
-# Abrir os pacotes "dplyr" e "forcats" para manipular a planilha
-install.packages("dplyr") # Instalar 
+# Abrir os pacotes "dplyr" e "forcats" para manipular os dados da planilha
+install.packages("dplyr") 
 install.packages("forcats") 
-library(dplyr) # Abrir 
+library(dplyr) 
 library(forcats) 
 
-# Agrupar as Espécies (sp1, sp2, etc.) e contar o Número de indivíduos
-y1 <- y %>% group_by(Especie) %>% # Agrupar
-            summarize(N_individuos = sum(N_individuos)) # Contar
-y1
+# Primeiro, vamos tirar os acentos do cabeçalho de algumas colunas
+# Neste caso, os acentos apenas são permitidos apenas dentro das colunas, 
+# mas não nos cabeçalhos
+y <- y %>% rename(Especie = "Espécie",
+                   Familia = "Família",
+                   Caracteristicas = "Características")
+
+# Agora, vamos agrupar as espécies pelo nome (sp1, sp2, etc.) e contar o número de 
+# indivíduos (N)
+y1 <- y %>% group_by(Especie) %>%
+             summarize(N = sum(N))
 
 ``` 
 
@@ -207,21 +161,26 @@ y1
 
 ``` r
 
-# A tibble: 12 × 2
-   Especie N_individuos
-   <chr>          <dbl>
- 1 sp1               16
- 2 sp10               2
- 3 sp11               6
- 4 sp12               4
- 5 sp2                9
- 6 sp3                7
- 7 sp4                9
- 8 sp5                3
- 9 sp6                6
-10 sp7                7
-11 sp8               16
-12 sp9               26
+# A tibble: 17 × 2
+   Especie             N
+   <chr>           <dbl>
+ 1 1R                  4
+ 2 2B                  4
+ 3 2R                 10
+ 4 4B                 10
+ 5 5B                  3
+ 6 6B                  6
+ 7 8B                  1
+ 8 Angico             14
+ 9 Asa de Fada         1
+10 Cogumelo branco     1
+11 Embaúba             4
+12 Espécie 3          30
+13 Guapuruvu          29
+14 Guaricica           1
+15 Manguba             1
+16 Palmeira            1
+17 Pitanga             1
 
 ```
 

@@ -509,6 +509,10 @@ dev.off()
 
 ## Bibliografia básica
 
-- [Capítulo 2 - Voltando ao básico: como dominar a arte de fazer perguntas cientificamente relevantes `.html`](https://analises-ecologicas.netlify.app/cap2.html)
-
 - [Capítulo 10 - Rarefação: Análises Ecológicas no R `.html`](https://analises-ecologicas.netlify.app/cap10.html)
+
+- -----
+
+## Leitura adicional
+
+- [Capítulo 2 - Voltando ao básico: como dominar a arte de fazer perguntas cientificamente relevantes `.html`](https://analises-ecologicas.netlify.app/cap2.html)

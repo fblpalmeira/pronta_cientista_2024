@@ -55,7 +55,7 @@ library(readxl) # Abrir
 
 ``` 
 
-Ler e visualizar a planilha
+Ler e visualizar a [planilha de dados](https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/planilha_pronta_2024.xlsx) que foi preenchida durante o trabalho de campo.
 
 ``` r
 

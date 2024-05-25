@@ -403,7 +403,7 @@ Pitanga                        0         1              0        0      0
 
 ``` 
 
-# Contar o número de indivíduos por parcela
+## Contar o número de indivíduos por parcela
 
 ``` r
 

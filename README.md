@@ -77,9 +77,7 @@ y # Vizualizar a planilha parcialmente
 
 ``` 
 
-## Vizualizando a planilha inteira
-
-Utilize o comando 'View' para visualizar a planilha inteira. Cada linha representa uma observação e cada coluna representa uma variável.
+Para visualizar a planilha inteira utilize o comando 'View' para visualizar a planilha inteira. Cada linha representa uma observação e cada coluna representa uma variável.
 
 ``` r
 
@@ -134,7 +132,7 @@ y1
 
 ``` 
 
-## Após a filtragem dos dados teremos o objeto (y1) a seguir:
+Após a filtragem dos dados teremos o objeto (y1) a seguir:
 
 ``` r
 
@@ -177,7 +175,7 @@ ggplot(y1, aes(Especie, N)) +
 
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1a_DAE.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot1.png"/>
 
 ## Organizando o gráfico em ordem crescente
 
@@ -191,7 +189,7 @@ ggplot(y1, aes(reorder(Especie, N), N)) +
   
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1b_DAE.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot2.png"/>
 
 ## Organizando o gráfico em ordem decrescente
 
@@ -205,7 +203,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
 
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1c_DAE.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot3.png"/>
 
 ## Colorindo o gráfico
 
@@ -217,7 +215,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
 
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1d_DAE.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot4.png"/>
 
 ## Renomeando as etiquetas dos eixos x e y 
 
@@ -231,7 +229,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N))+
 
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1e_DAE.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot5.png"/>
 
 ## Limpando o plano de fundo
 
@@ -250,7 +248,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
          
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1f_DAE.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot6.png"/>
 
 ## Aumentando o tamanho das letras 
 
@@ -272,7 +270,7 @@ ggplot(y1, aes(reorder(Especie, -N, sum), N)) +
 
 ```
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura1h_DAE.png"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot7.png"/>
 
 -----
 
@@ -440,7 +438,7 @@ ggiNEXT(estimates) +
   
 ```   
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura2_Rarefacao_Parcelas_1_e_2_a.png" align="center" width = "800px"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot8.png"/>
 
 ## Inserir uma linha vertical tracejada e salvar a figura 
 
@@ -468,7 +466,7 @@ ggiNEXT(estimates) +
 
 ``` 
 
-<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura2_Rarefacao_Parcelas_1_e_2_c.png" align="center" width = "800px"/>
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Rplot9.png"/>
 
 ----
 

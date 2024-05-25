@@ -442,7 +442,7 @@ ggiNEXT(estimates) +
 
 <img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura2_Rarefacao_Parcelas_1_e_2_a.png" align="center" width = "800px"/>
 
-# Inserir uma linha vertical tracejada e salvar a figura 
+## Inserir uma linha vertical tracejada e salvar a figura 
 
 A comparação da riqueza de espécies entre as comunidades deve ser feita com base na riqueza de espécies rarefeita, que é calculada com base no número de indivíduos do grupo ou parcela com menor abundância (166 indivíduos - linha preta tracejada).
 

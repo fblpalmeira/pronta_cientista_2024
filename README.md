@@ -5,18 +5,6 @@
 ### [Francesca B. L. Palmeira](https://fblpalmeira.github.io/), francesca@alumni.usp.br 
 
 -----
- 
-## Prática 
-
-O objetivo desta aula prática é visualizar a riqueza e a abundância de espécies vegetais utilizando os dados coletados durante o nosso trabalho de campo na Floresta da USP em Ribeirão Preto, SP em 11/05/2024.
-
-Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de aproximadamente 20 x 10 metros na borda da Floresta, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 a 40 minutos em cada parcela.
-
-<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/mapa_floresta_pronta_2024.jpg">
-
-Figura 2.  Localização das áreas amostradas na Floresta da USP em Ribeirão Preto.
-
------
 
 ## Links dos exercícios no Posit Cloud
 
@@ -33,6 +21,18 @@ A seguir, precisaremos acessar os exercícios clicando em qualquer um dos links 
 - [Link3 `.R`](https://posit.cloud/content/6029582)
 
 - [Link4 `.R`](https://posit.cloud/content/6029592)
+
+-----
+
+## Prática 
+
+O objetivo desta aula prática é visualizar a riqueza e a abundância de espécies vegetais utilizando os dados coletados durante o nosso trabalho de campo na Floresta da USP em Ribeirão Preto, SP em 11/05/2024.
+
+Durante o trabalho de campo, cada grupo de trabalho amostrou uma parcela de aproximadamente 20 x 10 metros na borda da Floresta, com uma distância de aproximadamente 30 metros entre as parcelas. A amostragem durou cerca de 30 a 40 minutos em cada parcela.
+
+<img src="https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/mapa_floresta_pronta_2024.jpg">
+
+Figura 2.  Localização das áreas amostradas na Floresta da USP em Ribeirão Preto.
 
 -----
 

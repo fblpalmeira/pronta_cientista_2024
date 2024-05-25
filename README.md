@@ -662,6 +662,38 @@ dev.off()
 ``` 
 <img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura2_Rarefacao_Parcelas_1_e_2_b.png" align="center" width = "800px"/>
 
+# Inserir uma linha vertical tracejada e salvar a figura 
+
+A comparação da riqueza de espécies entre as comunidades deve ser feita com base na riqueza de espécies rarefeita, que é calculada com base no número de indivíduos do grupo ou parcela com menor abundância (166 indivíduos - linha preta tracejada).
+
+``` r
+
+# Inserir uma linha vertical tracejada na Parcela_2 e salvar a figura final  
+ggiNEXT(estimates) + 
+  geom_vline(xintercept = 39, lty = 2) + # Insere a linha vertical
+  scale_linetype_discrete(labels = c("Interpolado", "Extrapolado")) +  
+  scale_colour_manual(values = c("orange", "cyan")) +
+  labs(x = "Número de indivíduos", y = " Riqueza de espécies")+
+  theme_bw()+
+  theme (panel.grid.major.x = element_blank(),
+         panel.grid.minor.x = element_blank())+
+  theme (panel.grid.major.y = element_blank(), 
+         panel.grid.minor.y = element_blank())+
+  theme (axis.title.x = element_text(size=20))+ 
+  theme (axis.title.y = element_text(size=20))+
+  theme (axis.text.x = element_text(size=16))+ 
+  theme (axis.text.y = element_text(size=16))+
+  theme (legend.key.size = unit(1, 'cm'), 
+        legend.key.height = unit(1, 'cm'), 
+        legend.key.width = unit(1, 'cm'), 
+        legend.text = element_text(size=14))
+
+``` 
+
+<img src="https://github.com/fblpalmeira/pronta_cientista/blob/main/data/Figura2_Rarefacao_Parcelas_1_e_2_c.png" align="center" width = "800px"/>
+
+----
+
 ## Interpretação dos resultados
 
 Existiu diferença estatística entre a riqueza e o número de espécies nas parcelas amostradas?
@@ -702,5 +734,3 @@ dev.off()
 - [Capítulo 2 - Voltando ao básico: como dominar a arte de fazer perguntas cientificamente relevantes `.html`](https://analises-ecologicas.netlify.app/cap2.html)
 
 - [Capítulo 10 - Rarefação: Análises Ecológicas no R `.html`](https://analises-ecologicas.netlify.app/cap10.html)
-
-- [Capítulo 11 - Estimadores de riqueza: Análises Ecológicas no R `.html`](https://analises-ecologicas.netlify.app/cap11.html)

@@ -505,11 +505,13 @@ dev.off()
 
 -----
 
+## Confira o material do ano passado
+
+[Pronta Cientista 2023, 4a. edição](https://github.com/fblpalmeira/pronta_cientista)
+
 ## Bibliografia básica
 
 - [Capítulo 10 - Rarefação: Análises Ecológicas no R `.html`](https://analises-ecologicas.netlify.app/cap10.html)
-
-- -----
 
 ## Leitura adicional
 

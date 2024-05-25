@@ -55,7 +55,7 @@ library(readxl) # Abrir
 
 ``` 
 
-Ler e visualizar a [Planilha](https://github.com/fblpalmeira/pronta_cientista_2024/blob/main/docs/Planilha_View.jpeg)
+Ler e visualizar a planilha
 
 ``` r
 
